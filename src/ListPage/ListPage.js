@@ -59,7 +59,7 @@ export default class ListPage extends Component {
 
   render() {
     return (
-      <>
+      <div>
       <ul>
         {
           this.state.todos && this.state.todos.map(todo => <li key={todo.id} className={todo.completed ? 'completed': 'active'} onClick={() => this.handleItemClick(todo)}>{todo.todo}</li>)
@@ -70,7 +70,7 @@ export default class ListPage extends Component {
       {
         this.state.add && <input onChange={this.newTodoHandler} value={this.state.newTodo} />
       }
-      </>
+      </div>
     )
   }
 }
