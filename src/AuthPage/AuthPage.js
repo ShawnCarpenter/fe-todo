@@ -11,7 +11,6 @@ export default class AuthPage extends Component {
 
   handleSignUp = async (e) => {
     e.preventDefault();
-    console.log(this.state)
 
     const user = await signUp({
         email: this.state.signUpEmail,
@@ -19,7 +18,7 @@ export default class AuthPage extends Component {
     });
 
     this.props.handleToken(user.body.token);
-    this.props.history.push('/');
+    this.props.history.push('/list');
 }
 
 handleSignIn = async (e) => {
@@ -35,7 +34,7 @@ handleSignIn = async (e) => {
   console.log('\n=============================')
 
   this.props.handleToken(user.body.token);
-  this.props.history.push('/');
+  this.props.history.push('/list');
 }
 componentDidCatch(err, errinfo) {
   console.log('=============================\n')
@@ -68,7 +67,7 @@ componentDidCatch(err, errinfo) {
             password:
             <input  onChange={e => this.setState({ signInPassword: e.target.value })} value={this.state.signInPassword}/>
           </label>
-          <button type="submit">Sign Up</button>
+          <button type="submit">Sign In</button>
         </form>
       </div>
     )

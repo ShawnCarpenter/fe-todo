@@ -40,3 +40,27 @@ export function addTodo(newTodo) {
       return { error: e.message }
   }
 }
+
+export function completeTodo(completedTodo) {
+  const token = localStorage.getItem('TOKEN')
+  const id = completedTodo.id;
+  try{
+      return request
+          .put(`${URL}/api/todos/${id}`, completedTodo)
+          .set('Authorization', token);
+  } catch(e) {
+      return { error: e.message }
+  }
+}
+
+export function deleteTodo(deleteTodo) {
+  const token = localStorage.getItem('TOKEN')
+  const id = deleteTodo.id;
+  try{
+      return request
+          .delete(`${URL}/api/todos/${id}`)
+          .set('Authorization', token);
+  } catch(e) {
+      return { error: e.message }
+  }
+}

@@ -9,6 +9,7 @@ import {
 import './App.css';
 import AuthPage from './AuthPage/AuthPage.js';
 import ListPage from './ListPage/ListPage';
+import HomePage from './HomePage/HomePage';
 
 export default class App extends Component {
 
@@ -35,17 +36,22 @@ clearToken = () => {
       <div className="App">
         <Router>
           <header>
+            <div><Link to="/">Home</Link></div>
+            <div><Link to="/login">Login</Link></div>
             {
               this.state.token &&
-              <>
-              <Link to="/">Home</Link>
-              <Link to="/login">Login</Link>
-              </>
+              <div><Link to="/list">List</Link></div>
             }
           </header>
           <Switch>
           <Route
               path="/" 
+              exact
+              render={(routerProps) => <HomePage token={this.state.token} {...routerProps} />} 
+
+            />
+          <Route
+              path="/list" 
               exact
               render={(routerProps) => <ListPage token={this.state.token} {...routerProps} />} 
 
