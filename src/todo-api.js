@@ -15,7 +15,7 @@ export function signIn(userData) {
   try {
     return request.post(`${URL}/auth/signin`, userData);
 } catch(e) {
-    return { error: e.message }
+    return {e }
 }
 }
 

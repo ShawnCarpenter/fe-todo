@@ -4,39 +4,36 @@
   grid-template-columns: 20% 1fr;
 }
 
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-links {
+  margin: 10px;
+  color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a {
+  color: black;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a:visited {
+  color: darkslategrey;
 }
 
 header {
-  background-color: red;
+  background-color:palevioletred;
   min-height: 100vh;
+  padding: 10px;
 
+}
+
+@media (max-width: 700px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    min-height: auto;
+  }
+  div {
+    display: inline;
+  }
+  
 }

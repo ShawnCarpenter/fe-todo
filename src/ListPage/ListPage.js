@@ -29,6 +29,8 @@ export default class ListPage extends Component {
 
 
     } else this.setState({add:true})
+    
+    this.setState({newTodo:''})
   }
   newTodoHandler = e => {
     this.setState({newTodo:e.target.value})

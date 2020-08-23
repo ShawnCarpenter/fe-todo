@@ -1,5 +1,10 @@
+ul {
+  width: 75%
+}
 li {
   list-style: none;
+  font-size: 20px;
+  text-align: left;
 }
 .completed {
   text-decoration: line-through;

@@ -23,18 +23,19 @@ export default class AuthPage extends Component {
 
 handleSignIn = async (e) => {
   e.preventDefault();
-
+try {
   const user = await signIn({
-      email: this.state.signInEmail,
-      password: this.state.signInPassword
-  });
-
-  console.log('=============================\n')
-  console.log('|| user.body', user.body)
-  console.log('\n=============================')
+    email: this.state.signInEmail,
+    password: this.state.signInPassword
+});
 
   this.props.handleToken(user.body.token);
   this.props.history.push('/list');
+} catch (error) {
+  console.log(error.response.body)
+}
+
+
 }
 componentDidCatch(err, errinfo) {
   console.log('=============================\n')
