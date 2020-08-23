@@ -36,11 +36,11 @@ clearToken = () => {
       <div className="App">
         <Router>
           <header>
-            <div><Link to="/">Home</Link></div>
-            <div><Link to="/login">Login</Link></div>
+            <div className="nav-links"><Link to="/">Home</Link></div>
+            <div className="nav-links"><Link to="/login">Login</Link></div>
             {
               this.state.token &&
-              <div><Link to="/list">List</Link></div>
+              <div className="nav-links"><Link to="/list">List</Link></div>
             }
           </header>
           <Switch>
